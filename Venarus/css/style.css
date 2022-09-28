@@ -1,0 +1,259 @@
+/*Default font*/
+
+/*Colors*/
+
+/*Max-width of screen*/
+
+@font-face {
+  font-family: "Merriweather";
+  font-display: swap;
+  src: url("../fonts/Merriweather-Bold.woff2") format("woff2"), url("../fonts/Merriweather-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  src: url("../fonts/Roboto-Light.woff2") format("woff2"), url("../fonts/Roboto-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+input,
+textarea {
+  outline: none;
+  border: none;
+}
+
+.checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.checkbox input[type=checkbox] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.checkbox input[type=checkbox] + span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  border: 2px solid #dadada;
+}
+
+.checkbox input[type=checkbox]:checked + span::before {
+  border: 2px solid #009aaf;
+}
+
+.checkbox input[type=checkbox]:checked + span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  background-color: #53b5de;
+  width: 9px;
+  height: 9px;
+}
+
+.checkbox span {
+  display: block;
+  position: relative;
+  padding-left: 2em;
+}
+
+.spoller {
+  cursor: pointer;
+}
+
+.select {
+  position: relative;
+}
+
+.select::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.select select {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+}
+
+.select select:focus {
+  outline: none;
+}
+
+.select select option {
+  color: #000000;
+}
+
+.tab-block {
+  display: none;
+}
+
+.tab-block--active {
+  display: block;
+}
+
+body {
+  font-family: "Roboto", serif;
+  font-size: 16px;
+  color: #242424;
+}
+
+img {
+  display: inline-block;
+}
+
+.title {
+  font-family: "Merriweather", serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: min(1.5vh, 38px);
+}
+
+.btn {
+  padding: 20px 80px;
+  line-height: 1.14;
+  font-size: 18px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 34px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn.white {
+  border-color: white;
+  color: white;
+}
+
+.btn.plum {
+  border-color: #47093E;
+  color: #47093E;
+}
+
+@media screen and (min-width: 992px) {
+  .btn.white:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .btn.plum:hover {
+    background-color: #590D56;
+  }
+}
+
+@media (max-width: 1160px) {
+  .title {
+    font-size: calc(25px + 5 * ((100vw - 320px) / 840));
+  }
+}
+@supports (-webkit-appearance:none){
+
+}
+
+ @media screen and (min-width: 992px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 1160px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}

@@ -1,0 +1,68 @@
+
+/*Default font*/
+$fontFamaly: "Roboto";
+
+$minWidth: 320px;
+$maxWidth: 1400;
+$maxWidthContainer: 1160;
+
+/*Colors*/
+$plum1: #590D56;
+$plum2: #47093E;
+$grey1: #777;
+$grey2: #7A7A7A;
+$dark: #242424;
+
+
+@import "basic";
+
+body{
+    font-family: $fontFamaly, serif;
+    font-size: 16px;
+    color: $dark;
+}
+img{
+    display: inline-block;
+}
+
+
+@import "header";
+@import "footer";
+
+.title {
+    font-family: 'Merriweather', serif;
+    @include adaptiv-font(30, 25, 1);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: min(1.5vh, 38px);
+}
+.btn {
+    padding: 20px 80px;
+    line-height: 1.14;
+    font-size: 18px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: all .3s;
+    
+    &.white{
+        border-color: white;
+        color: white;
+
+        &:hover{
+            @media screen and (min-width: 992px) {
+                background-color: rgba(white, .3);
+            }
+        }
+    }
+    &.plum{
+        border-color: $plum2;
+        color: $plum2;
+        &:hover{
+            @media screen and (min-width: 992px) {
+                background-color: $plum1;
+            }
+        }
+    }
+}
