@@ -192,6 +192,81 @@ img {
   display: inline-block;
 }
 
+.menu-icon {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  -webkit-transition: 0.7s all;
+  -o-transition: 0.7s all;
+  transition: 0.7s all;
+}
+
+.menu-icon span {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #590D56;
+}
+
+.menu-icon span:nth-child(1) {
+  top: 0;
+}
+
+.menu-icon span:nth-child(2) {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.menu-icon span:nth-child(3) {
+  bottom: 0;
+}
+
+.menu-icon.active {
+  display: block;
+}
+
+.menu-icon.active span:nth-child(1) {
+  top: 48.5%;
+  -webkit-transform: rotate(45deg) translateY(-50%);
+      -ms-transform: rotate(45deg) translateY(-50%);
+          transform: rotate(45deg) translateY(-50%);
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+  bottom: 48.5%;
+  -webkit-transform: rotate(-45deg) translateY(50%);
+      -ms-transform: rotate(-45deg) translateY(50%);
+          transform: rotate(-45deg) translateY(50%);
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1%;
+}
+
+.wrapper div:first-child {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 23%;
+          flex: 0 1 23%;
+}
+
+.wrapper div:last-child {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 76%;
+          flex: 0 1 76%;
+}
+
 .title {
   font-family: "Merriweather", serif;
   font-size: 30px;
@@ -230,6 +305,7 @@ img {
 
   .btn.plum:hover {
     background-color: #590D56;
+    color: white;
   }
 }
 
