@@ -28,10 +28,14 @@ button{
     outline: none;
     border: none;
     background: none;
+    padding: 0;
 }
 input, textarea{
     outline: none;
     border: none;
+}
+img{
+    display: inline-block;
 }
 
 .checkbox{

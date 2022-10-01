@@ -9,6 +9,7 @@ $maxWidthContainer: 1160;
 /*Colors*/
 $plum1: #590D56;
 $plum2: #47093E;
+$plum3: #5B0E58;
 $grey1: #777;
 $grey2: #7A7A7A;
 $grey3: #828282;
@@ -26,10 +27,11 @@ img{
     display: inline-block;
 }
 
-
-@import "header";
-@import "footer";
-
+.container{
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 13px;
+}
 .menu-icon{
     display: none;
     position: relative;
@@ -90,14 +92,18 @@ img{
     margin-bottom: min(1.5vh, 38px);
 }
 .btn {
-    padding: 20px 80px;
+    padding: min(3vh, 20px) min(13vw, 80px);
     line-height: 1.14;
-    font-size: 18px;
+    @include adaptiv-font(18, 14, 1);
     border-width: 1px;
     border-style: solid;
     border-radius: 34px;
     cursor: pointer;
     transition: all .3s;
+
+    @media screen and (max-width: 650px) {
+        padding: min(3vh, 10px) min(13vw, 25px);
+    }
     
     &.white{
         border-color: white;
@@ -120,3 +126,7 @@ img{
         }
     }
 }
+
+@import "header";
+@import "footer";
+
