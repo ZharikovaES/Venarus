@@ -1,0 +1,109 @@
+.advantages {
+    padding-top: 14vh;
+    padding-bottom: 16vh;
+
+    @media screen and (max-width: 1000px) {
+        padding-top: 8vh;
+        padding-bottom: 6vh;
+    }
+    @media screen and (max-width: 650px) {
+        padding-top: 4vh;
+        padding-bottom: 3vh;
+    }
+
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        @media screen and (max-width: 950px) {
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1vw;
+        }    
+        @media screen and (max-width: 555px) {
+            justify-content: center;
+        }    
+    }
+    &__item {
+        flex: 0 1 262px;
+
+        @media screen and (max-width: 555px) {
+            flex: 0 1 max(80vw, 262px);
+            justify-content: center;
+        }    
+
+        &:last-child{
+            flex: 0 1 360px;
+            position: relative;
+            @media screen and (max-width: 555px) {
+                flex: 0 1 max(80vw, 360px);
+            }    
+
+            .advantages__pop-up {
+                max-width: 34vw;
+                position: absolute;
+                right: 1%;
+                bottom: -10vh;
+                display: inline-block;
+                opacity: 0;
+                transition: all .4s;
+                transform: scale(0);
+                border: 1px solid $plum1;
+                padding: 1vh 3vw;
+                border-radius: 15px;
+                background-color: white;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    right: 9%;
+                    top: -2vh;
+                    border: 1vh solid transparent; border-bottom: 1vh solid $plum1;
+
+                }
+                @media screen and (max-width: 1000px) {
+                    right: 8%;
+                    max-width: 50vw;
+                }  
+                  
+                &.visible{
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        
+        }
+    }
+}
+.item-advantages {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+
+    &__content{
+        display: flex;
+        align-items: flex-end;
+    }
+    &__img {
+        width: min(68px,11vw);
+        height: min(68px, 11vh);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg{
+            width: 100%;
+        }
+    }
+    &__text {
+        font-family: 'Merriweather', serif;
+        font-weight: 700;
+        @include adaptiv-font(16, 14, 1);
+        line-height: 1.45;
+    }
+    &__btn {
+        margin-left: 0.5vw;
+        
+    }
+}
