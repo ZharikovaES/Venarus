@@ -61,6 +61,8 @@ function ready() {
     });
   }
 
+  // discount
+
   // added discount-text
   if (discountContent && discountLink) {
     const span = document.createElement('span');
@@ -69,6 +71,8 @@ function ready() {
         discountContent.append(span.cloneNode(true));
       } 
   }
+
+  // advantages
 
   // pop-up of advantages
   if (itemAdvantagesBtn) {
@@ -87,7 +91,7 @@ function ready() {
   }
 
   document.body.addEventListener('click', e => {
-    
+
     // closing pop-up
     if (popUpAdvantages.classList.contains('visible')) {
       if (itemAdvantagesBtn.getAttribute('aria-expanded'))

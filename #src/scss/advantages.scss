@@ -8,9 +8,8 @@
     }
     @media screen and (max-width: 650px) {
         padding-top: 4vh;
-        padding-bottom: 3vh;
+        padding-bottom: 5vh;
     }
-
 
     &__list {
         display: flex;
@@ -43,7 +42,7 @@
                 max-width: 34vw;
                 position: absolute;
                 right: 1%;
-                bottom: -10vh;
+                bottom: -5vh;
                 display: inline-block;
                 opacity: 0;
                 transition: all .4s;
@@ -105,5 +104,9 @@
     &__btn {
         margin-left: 0.5vw;
         
+        &:hover ~ .advantages__pop-up {
+            opacity: 1;
+            transform: scale(1);
+        }
     }
 }

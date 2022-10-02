@@ -76,12 +76,25 @@ img{
 }
 .wrapper{
     display: flex;
-    gap: 1%;
+    gap: 2%;
+    @media screen and (max-width: 900px) {
+        gap: 4%;
+    }
+    @media screen and (max-width: 850px) {
+        flex-wrap: wrap;
+    }
+
     div:first-child{
         flex: 0 1 23%;
+        @media screen and (max-width: 850px) {
+            flex: 0 1 100%;
+        }    
     }
     div:last-child{
         flex: 0 1 76%;
+        @media screen and (max-width: 850px) {
+            flex: 0 1 100%;
+        }    
     }
 }
 .title {
@@ -90,6 +103,13 @@ img{
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: min(1.5vh, 38px);
+    @media screen and (max-width: 850px) {
+        margin-bottom: max(3vh, 38px);
+    }    
+    @media screen and (max-width: 650px) {
+        margin-bottom: max(3vh, 18px);
+    }    
+
 }
 .btn {
     padding: min(3vh, 20px) min(13vw, 80px);
@@ -132,5 +152,6 @@ img{
 @import "header";
 @import "discount";
 @import "advantages";
+@import "actions";
 @import "footer";
 
