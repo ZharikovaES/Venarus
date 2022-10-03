@@ -150,25 +150,30 @@ img{
         }
     }
 }
-.icon-play::before {
-    content: '';
-    display: block;
-    width: 67px;
-    height: 67px;
-    background-image: url('../images/play-plum.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity .5s;
-    opacity: 0;
-    z-index: 4;
-    @media screen and (max-width: 500px) {
-        width: 50px;
-        height: 50px;
-    }             
+.icon-play {
+    position: relative;
+    z-index: 3;
+    
+    &::before {
+        content: '';
+        display: block;
+        width: 67px;
+        height: 67px;
+        background-image: url('../images/play-plum.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity .5s;
+        opacity: 0;
+        z-index: 4;
+        @media screen and (max-width: 500px) {
+            width: 50px;
+            height: 50px;
+        }             
+    }
 }
 .swiper-button-prev, .swiper-button-next {
     &::after{
@@ -178,11 +183,11 @@ img{
 
 
 
-
 @import "header";
 @import "discount";
 @import "advantages";
 @import "actions";
 @import "about-production";
+@import "expert-opinion";
 @import "footer";
 

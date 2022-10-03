@@ -6,8 +6,8 @@ function ready() {
   const discountContent = document.querySelector('.discount__content');
   const itemAdvantagesBtn = document.querySelector('.item-advantages__btn');
   const popUpAdvantages = document.querySelector('.advantages__pop-up');
-  const gsImgSelector = ".about-production .swiper-slide a";
   const contentGalleryProduction = document.getElementById('about-production-gallery-videos');
+  const contentGalleryOpinion = document.getElementById('expert-opinion-gallery-videos');
   
   // dynamic adaptive
   new DynamicAdapt("max").init();
@@ -29,11 +29,11 @@ function ready() {
               translate: ["100%", 0, 0],
             },
           },
-        centeredSlides: true,
-        autoplay: {
-          delay: 3500,
-          disableOnInteraction: false,
-        },    
+      centeredSlides: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },    
       navigation: {
         nextEl: '.slider-header .swiper-button-next',
         prevEl: '.slider-header .swiper-button-prev',
@@ -109,7 +109,7 @@ function ready() {
 
   // about production
 
-  //slider
+  // slider
   const swiperAboutProduction = new Swiper('.body-about-production__slider', {
     slidesPerView: 2,
     initialSlide: 1,
@@ -136,15 +136,14 @@ function ready() {
   });
 
   // gallery for videos of slider
-  const dynamicEl = [...document.querySelectorAll(gsImgSelector)].map(
-                                                                      (el) => {
+  const dynamicElAboutProduction = [...document.querySelectorAll(".about-production .swiper-slide a")].map(
+                                                                      el => {
                                                                         return {
                                                                           src: el?.dataset?.src,
                                                                           thumb: el?.dataset?.src,
                                                                           poster: el?.dataset?.poster,
                                                                           subHtml: el?.dataset?.subHtml,
                                                                           lgSize: el?.dataset?.lgSize
-
                                                                         };
                                                                       }
                                                                     );
@@ -153,7 +152,11 @@ function ready() {
     const popup = lightGallery(contentGalleryProduction, {
       plugins: [lgVideo],
       dynamic: true,
-      dynamicEl
+      dynamicEl: dynamicElAboutProduction,
+      mobileSettings: {
+        controls: true,
+        showCloseIcon: true,
+      },
     });
     
     if (popup)
@@ -162,6 +165,59 @@ function ready() {
           popup.openGallery(idx);
         });
       });  
+  }
+
+  // expert opinion
+
+  // init array for gallery
+  const dynamicElExpertOpinion = [...document.querySelectorAll(".expert-opinion .swiper-slide a")].map(el => {
+      return {
+        src: el?.dataset?.src,
+        thumb: el?.dataset?.src,
+        poster: el?.dataset?.poster,
+        subHtml: el?.dataset?.subHtml,
+        lgSize: el?.dataset?.lgSize
+      };
+    }
+  );
+
+  // slider
+  const swiperExpertOpinion = new Swiper('.body-expert-opinion__slider', {
+      slidesPerView: 1,
+      loop: true,
+      grabCursor: true,
+      speed: 500,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },    
+      effect: "fade",
+      pagination: {
+        el: ".body-expert-opinion__slider .swiper-pagination",
+        clickable: true
+      },
+    });
+
+  // gallery for videos of slider    
+  if (contentGalleryOpinion) {
+    const popup = lightGallery(contentGalleryOpinion, {
+                                                        plugins: [lgVideo],
+                                                        dynamic: true,
+                                                        dynamicEl: dynamicElExpertOpinion,
+                                                        mobileSettings: {
+                                                          controls: true,
+                                                          showCloseIcon: true,
+                                                        },
+                                                      });
+
+    if (popup)
+      [...document.querySelectorAll(".expert-opinion .swiper-slide")].forEach((slide, idx) => {
+                                                                        slide.addEventListener("click", () => {
+                                                                          let realIndexSlider = contentGalleryOpinion.getElementsByClassName('swiper-slide-active');
+                                                                          realIndexSlider = Number(realIndexSlider[0].getAttribute('data-swiper-slide-index'));
+                                                                          popup.openGallery(realIndexSlider);
+                                                                        });
+    });  
   }
 }
 
