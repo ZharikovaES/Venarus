@@ -77,6 +77,7 @@ img{
 .wrapper{
     display: flex;
     gap: 2%;
+    justify-content: space-between;
     @media screen and (max-width: 900px) {
         gap: 4%;
     }
@@ -84,14 +85,15 @@ img{
         flex-wrap: wrap;
     }
 
-    div:first-child{
+    & > div::first-child{
         flex: 0 1 23%;
         @media screen and (max-width: 850px) {
             flex: 0 1 100%;
         }    
     }
-    div:last-child{
-        flex: 0 1 76%;
+    & > div::last-child{
+        flex: 0 1 75%;
+
         @media screen and (max-width: 850px) {
             flex: 0 1 100%;
         }    
@@ -103,6 +105,8 @@ img{
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: min(1.5vh, 38px);
+    color: black;
+
     @media screen and (max-width: 850px) {
         margin-bottom: max(3vh, 38px);
     }    
@@ -146,6 +150,32 @@ img{
         }
     }
 }
+.icon-play::before {
+    content: '';
+    display: block;
+    width: 67px;
+    height: 67px;
+    background-image: url('../images/play-plum.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .5s;
+    opacity: 0;
+    z-index: 4;
+    @media screen and (max-width: 500px) {
+        width: 50px;
+        height: 50px;
+    }             
+}
+.swiper-button-prev, .swiper-button-next {
+    &::after{
+        font-size: 0;
+    }
+}
+
 
 
 
@@ -153,5 +183,6 @@ img{
 @import "discount";
 @import "advantages";
 @import "actions";
+@import "about-production";
 @import "footer";
 

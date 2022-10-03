@@ -34,6 +34,7 @@
         &:last-child{
             flex: 0 1 360px;
             position: relative;
+            
             @media screen and (max-width: 555px) {
                 flex: 0 1 max(80vw, 360px);
             }    
