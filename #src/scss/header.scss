@@ -36,6 +36,10 @@
         background-position: 100% 18vh;
         background-size: 110% calc(100% - 18vh);
     }
+    @media screen and (min-height: 1300px) and (min-width: 1000px) {
+        background-position: center 18vh;
+        background-size: 120% calc(100% - 32vh);
+    }
     @media screen and (min-height: 1200px) and (min-width: 1160px) {
         background-position: center 14vh;
         background-size: 100% calc(100% - 20vh);
