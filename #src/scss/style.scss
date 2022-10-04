@@ -85,13 +85,13 @@ img{
         flex-wrap: wrap;
     }
 
-    & > div::first-child{
+    & > div:first-child{
         flex: 0 1 23%;
         @media screen and (max-width: 850px) {
             flex: 0 1 100%;
         }    
     }
-    & > div::last-child{
+    & > div:last-child{
         flex: 0 1 75%;
 
         @media screen and (max-width: 850px) {
@@ -189,5 +189,6 @@ img{
 @import "actions";
 @import "about-production";
 @import "expert-opinion";
+@import "useful-information";
 @import "footer";
 

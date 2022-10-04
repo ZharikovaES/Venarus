@@ -5,21 +5,21 @@
         padding: 6vh 0;
     }    
     @media screen and (max-width: 650px) {
-        padding: 4vh 0;
+        padding: 4vh 0 0;
     }    
     @media screen and (max-width: 450px) {
-        padding: 3vh 0;
+        padding: 3vh 0 0;
     }    
 
     &__inner {}
-    &__head {}
+    &__head {
+        @media screen and (max-width: 850px) {
+            margin-bottom: 2vh;
+        }        
+    }
     &__body {}
 }
 .head-expert-opinion {
-    @media screen and (max-width: 850px) {
-        margin-bottom: 2vh;
-    }    
-
     &__title {}
     &__text {
         line-height: 1.5;
