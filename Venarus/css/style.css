@@ -201,6 +201,12 @@ img {
   display: inline-block;
 }
 
+.preload * {
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
 .container {
   max-width: 1160px;
   margin: 0 auto;

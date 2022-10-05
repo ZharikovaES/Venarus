@@ -1,6 +1,7 @@
-
 function ready() {
   const menuBtnHeader = document.querySelector('.top-header__list-btn');
+  const animOpenMenuIcon = document.querySelectorAll('.menu-btn-open-anim');
+  const animCloseMenuIcon = document.querySelectorAll('.menu-btn-close-anim');
   const menuHeader = document.querySelector('.menu-header');
   const discountLink = document.querySelector('.discount__link');
   const discountContent = document.querySelector('.discount__content');
@@ -41,7 +42,7 @@ function ready() {
   });
   
   // eventListener (click) for button of menu
-  if (menuBtnHeader && menuHeader) {
+  if (menuBtnHeader && menuHeader && animOpenMenuIcon && animCloseMenuIcon) {
     menuBtnHeader.addEventListener('click', e => {
       menuBtnHeader.style.pointerEvents = "none";
       if (document.body.style.overflow) document.body.style.overflow = null;
@@ -52,8 +53,18 @@ function ready() {
         behavior: "smooth"
       });
   
-      if (menuHeader.style.left) menuHeader.style.left = null;
-      else menuHeader.style.left = 0;
+      if (menuHeader.style.left) {
+        menuHeader.style.left = null;
+        animCloseMenuIcon.forEach(el => {
+          el.beginElement();
+        });
+      }
+      else {
+        menuHeader.style.left = 0;
+        animOpenMenuIcon.forEach(el => {
+          el.beginElement();
+        });
+      }
   
       if (menuBtnHeader.getAttribute('aria-expanded'))
         menuBtnHeader.setAttribute('aria-expanded', false);
@@ -211,14 +222,18 @@ function ready() {
                                                       });
 
     if (popup)
-      [...document.querySelectorAll(".expert-opinion .swiper-slide")].forEach((slide, idx) => {
-                                                                        slide.addEventListener("click", () => {
-                                                                          let realIndexSlider = contentGalleryOpinion.getElementsByClassName('swiper-slide-active');
-                                                                          realIndexSlider = Number(realIndexSlider[0].getAttribute('data-swiper-slide-index'));
-                                                                          popup.openGallery(realIndexSlider);
-                                                                        });
+      [...document.querySelectorAll(".expert-opinion .swiper-slide")].forEach(slide => {
+                                              slide.addEventListener("click", () => {
+                                                let realIndexSlider = contentGalleryOpinion.getElementsByClassName('swiper-slide-active');
+                                                realIndexSlider = Number(realIndexSlider[0].getAttribute('data-swiper-slide-index'));
+                                                popup.openGallery(realIndexSlider);
+                                              });
     });  
   }
 }
+
+window.addEventListener("load", () => {
+  document.body.classList.remove("preload");
+});
 
 document.addEventListener("DOMContentLoaded", ready);

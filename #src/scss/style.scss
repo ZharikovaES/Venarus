@@ -18,6 +18,7 @@ $dark: #242424;
 
 @import "basic";
 
+
 body{
     font-family: $fontFamaly, serif;
     font-size: 16px;
@@ -27,6 +28,9 @@ img{
     display: inline-block;
 }
 
+.preload * {
+    transition: none !important;
+}
 .container{
     max-width: 1160px;
     margin: 0 auto;
